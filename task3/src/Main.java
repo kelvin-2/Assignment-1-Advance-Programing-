@@ -3,14 +3,38 @@ import java.util.Random;
 public class Main {
     public static void main(String[] args) {
        int [][] grid=griGenarator();
+       boolean [][] isVisted = new boolean[grid.length][grid[0].length];
+       String [][] labels = new String[grid.length][grid[0].length];
+
+       boolean pathExists = canReach(grid,0,0,isVisted,labels);
+
+       int pathLenght =0;
+
+        for (int row = 0; row < grid.length; row++) {
+            for (int col = 0; col < grid[0].length; col++) {
+                if (labels[row][col] != null) {
+                    System.out.printf("%-4s", grid[row][col] + labels[row][col]);
+                    pathLenght +=  grid[row][col];
+                } else {
+                    System.out.printf("%-4s", grid[row][col] + " ");
+                }
+            }
+            System.out.println();
+        }
+        if (pathExists) {
+            System.out.println("Path exists");
+            System.out.println("Path length = " + pathLenght);
+        }else{
+            System.out.println("No path exists");
+        }
     }
     public static int [][] griGenarator(){
         Random rand = new Random();
         //n should be random number between 0 and 10
-        int n= rand.nextInt(9)+1;
-        while(n==1){
-            n=rand.nextInt(9)+1;
-        }
+        int n= 3;
+//        while(n==1){
+//            n=rand.nextInt(9)+1;
+//        }
         //the grid has to be an n by n
         int [][] grid =new int [n][n];
 
