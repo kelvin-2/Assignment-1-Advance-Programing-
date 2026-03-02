@@ -1,3 +1,5 @@
+package com.polynomial.task2;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -45,7 +47,7 @@ public class Main {
         System.out.println();
         System.out.println("-----------------------------------------------------");
 
-        System.out.println("Test 4 : Polynomial Addition");
+        System.out.println("Test 4 : com.polynomial.task2.Polynomial Addition");
         Polynomial p1 = new Polynomial();
         p1.addTerms(3, 2);   // 3X^2
         p1.addTerms(5, 0);   // 5

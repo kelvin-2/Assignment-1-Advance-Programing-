@@ -1,3 +1,5 @@
+package com.polynomial.task2;
+
 public class Term {
     private double coefficient;
     private double exponet;
